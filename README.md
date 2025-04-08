@@ -31,3 +31,4 @@ Some usefull info:
 - Press '0' to quit
 - Press 'SHIFT' + '0' to throw a SimulatedException and crash
 - Launcher arguments can be passed in. Setting the LogLevel to INFO or SUCCESS might make the console less cluttered. (documentation of inputs in Logger.java file)
+- Documentation is available here: https://felixphone.github.io/parsec/
