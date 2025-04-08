@@ -1,6 +1,7 @@
 This progect is intended to be a game engine (written as mutch from scratch as possible) for a space themed exploration game.
 
 I decided to split the engine up into different threads to help improve overhead.
+This is important as in the future I want to upscale it, and create a separate, native graphics engine which will interface with the main engine via the JNI.
 
 There are 3 main threads:
 - the ENGINE_CORE_THREAD: handles the engine stuff
