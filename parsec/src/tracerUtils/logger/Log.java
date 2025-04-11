@@ -87,7 +87,7 @@ public class Log {
     }
 
     private void print(LogEntry logEntry) {
-        System.out.println(logEntry.toColouredString() + " { from log }"); //TODO: doesnt work for some reason
+        System.out.println(logEntry.toColouredString());
     }
 
     private void writeToFile(LogEntry logEntry) {

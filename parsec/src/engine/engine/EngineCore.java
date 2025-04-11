@@ -1,31 +1,30 @@
 package engine.engine;
 
-import launcher.watchdog.EngineWatchdog;
-import tracerUtils.data.ExceptionContext;
 import engine.dataItems.constants.GameLoopConstants;
-import tracerUtils.data.ThreadState;
-import tracerUtils.traceableException.defaultExceptions.fatal.OutOfMemoryException;
-import tracerUtils.traceableException.defaultExceptions.fatal.UncaughtException;
-import tracerUtils.traceableException.defaultExceptions.fatal.UntraceableException;
 import engine.engineFlags.DebugFlagType;
 import engine.engineFlags.FlagManager;
 import engine.engineFlags.FlagType;
+import engine.graphics.GraphicsEngine;
 import engine.inputs.KeyManager;
 import engine.inputs.MouseManager;
 import engine.system.SystemInfo;
 import engine.system.SystemManager;
 import engine.system.dataItems.enums.SystemType;
 import engine.system.dataItems.exeptions.UnsupportedPlatformException;
-import tracerUtils.logger.Logger;
 import game.GameCore;
-import engine.graphics.GraphicsEngine;
-import launcher.Launcher;
+import launcher.launchConfig.LaunchConfig;
+import launcher.watchdog.EngineWatchdog;
+import tracerUtils.data.ExceptionContext;
+import tracerUtils.data.ThreadState;
 import tracerUtils.exitReport.CrashReport;
 import tracerUtils.exitReport.ExitReport;
 import tracerUtils.exitReport.QuitReason;
-import launcher.launchConfig.LaunchConfig;
-import tracerUtils.traceableException.TraceableException;
+import tracerUtils.logger.Logger;
 import tracerUtils.traceableException.FatalTraceableException;
+import tracerUtils.traceableException.TraceableException;
+import tracerUtils.traceableException.defaultExceptions.fatal.OutOfMemoryException;
+import tracerUtils.traceableException.defaultExceptions.fatal.UncaughtException;
+import tracerUtils.traceableException.defaultExceptions.fatal.UntraceableException;
 
 
 public class EngineCore  {
@@ -130,7 +129,6 @@ public class EngineCore  {
                     EngineCore.currentState = "STARTING-GAME-LOOP";
                     startGameLoop();
                     EngineWatchdog.getLogger().engineSuccess("Exited game loop cleanly!", "", new ThreadState(Thread.currentThread()));
-                    while(true) {}
                 }
                 catch (OutOfMemoryError e) {
                     throw new OutOfMemoryException("Out of memory!", "Out of memory! Could not allocate space: " + e.getMessage(), "Exception OutOfMemoryError thrown", e, new ThreadState(Thread.currentThread()));

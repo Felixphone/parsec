@@ -1,9 +1,10 @@
 package tracerUtils.logger;
 
-import launcher.watchdog.EngineWatchdog;
 import tracerUtils.data.ThreadState;
 import tracerUtils.exitReport.ExitReport;
-import tracerUtils.logger.entries.*;
+import tracerUtils.logger.entries.ConsoleColours;
+import tracerUtils.logger.entries.LogEntry;
+import tracerUtils.logger.entries.LogLevel;
 import tracerUtils.logger.entries.extendedMessage.ExtendedMessage;
 import tracerUtils.logger.entries.extendedMessage.ExtendedMessageTextElement;
 import tracerUtils.traceableException.FatalTraceableException;
@@ -20,8 +21,8 @@ public class Logger {
 
     private Log log;
 
-    private boolean shouldProcessEntries = true;
-    private BlockingQueue<LogEntry> pendingEntries = new LinkedBlockingQueue<>();
+    private volatile boolean shouldProcessEntries = true;
+    private volatile BlockingQueue<LogEntry> pendingEntries = new LinkedBlockingQueue<>();
 
     public Logger() {
         startProcessingEntries();
@@ -111,9 +112,6 @@ public class Logger {
 
     public void log(LogEntry entry) {
         pendingEntries.add(entry);
-        if (entry.getLogLevel().getLevel() >= log.getConsoleLogLevel().getLevel()) {
-            System.out.println(entry.toColouredString() + " { from logger }"); //TODO: print message here, otherwise it doesn't print in Log for some reason
-        }
     }
 
     private void startProcessingEntries() {

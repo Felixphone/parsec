@@ -12,8 +12,10 @@ import tracerUtils.data.ThreadState;
 import tracerUtils.exitReport.CrashReport;
 import tracerUtils.exitReport.ExitReport;
 import tracerUtils.logger.Logger;
-import tracerUtils.logger.entries.*;
+import tracerUtils.logger.entries.LogEntry;
+import tracerUtils.logger.entries.LogLevel;
 import tracerUtils.traceableException.defaultExceptions.fatal.FailedToQuitOrCrashNormallyException;
+
 import java.util.Date;
 
 /**
@@ -46,9 +48,9 @@ public class EngineWatchdog {
      * <br>
      * This causes the <b>WATCHDOG_THREAD</b> to break out of the while loop in {@link #start()}, and handle the {@link ExitReport} accordingly.
      */
-    private static ExitReport exitReport;
+    private static volatile ExitReport exitReport;
 
-    private static IsAliveNotification lastAliveNotification;
+    private static volatile IsAliveNotification lastAliveNotification;
 
     /**
      * The {@link Logger} to be used by both the {@link EngineWatchdog} and {@link EngineCore} to record {@link LogEntry}s.

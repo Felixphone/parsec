@@ -1,14 +1,14 @@
 package launcher;
 
 import engine.engine.EngineCore;
-import launcher.watchdog.EngineWatchdog;
-import tracerUtils.logger.entries.ConsoleColours;
-import tracerUtils.data.ThreadState;
-import tracerUtils.logger.entries.LogEntry;
-import tracerUtils.exitReport.ExitReport;
 import launcher.launchConfig.DebugMode;
-import tracerUtils.config.FatalExceptionHandling;
 import launcher.launchConfig.LaunchConfig;
+import launcher.watchdog.EngineWatchdog;
+import tracerUtils.config.FatalExceptionHandling;
+import tracerUtils.data.ThreadState;
+import tracerUtils.exitReport.ExitReport;
+import tracerUtils.logger.entries.ConsoleColours;
+import tracerUtils.logger.entries.LogEntry;
 import tracerUtils.logger.entries.LogLevel;
 
 import javax.swing.*;
@@ -197,8 +197,6 @@ public class Launcher {
 
         // stop engine
         engineCore.close();
-
-        unsafeExit(0, "test");
 
         // wait for engineThread to finish execution
         EngineWatchdog.getLogger().engineAttempt("Terminating engine thread...", "", new ThreadState(Thread.currentThread()));
