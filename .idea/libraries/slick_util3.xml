@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="slick-util3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/SlickUtil3/slick-util3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

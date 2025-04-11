@@ -1,0 +1,51 @@
+<component name="libraryTable">
+  <library name="LWGL">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-stb-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-assimp-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-opengl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-glfw-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-stb-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-bgfx-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-openal-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-assimp-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-openal-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nanovg-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-opengl-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nanovg-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-bgfx-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nuklear-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-vulkan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-glfw.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-par-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-openal-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-par-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-glfw-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-assimp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nuklear-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nanovg-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nuklear.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-par-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-vulkan-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-bgfx-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-bgfx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-glfw-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-stb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-vulkan-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nanovg.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-par.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-assimp-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-opengl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-nuklear-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-opengl-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-openal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/parsec/src/engine/graphics/Libraries/LWGL/lwjgl-stb-natives-windows.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
