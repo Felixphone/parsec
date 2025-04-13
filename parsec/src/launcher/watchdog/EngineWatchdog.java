@@ -147,7 +147,11 @@ public class EngineWatchdog {
      * Closes the watchdog when the program is ready to terminate or restart
      */
     public void close() {
-        //close logger
+        // reset static variables
+        exitReport = null;
+        lastAliveNotification = null;
+
+        // close logger
         try {
             logger.engineAttempt("Closing Logger...", "", new ThreadState(Thread.currentThread()));
             logger.close(exitReport);
