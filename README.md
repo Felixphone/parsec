@@ -19,12 +19,13 @@ The main instantiation structure is as follows:
         |    ├ GameCore: holds the main logic for the game
 
 Current issues faced (at least this is what I think they are, I am not too sure):
-- Unexpected exiting of threads with no exception thrown
-- Unexpected freezing of threads with no exception thrown
-- Threads failing to start with no exception thrown
-- Frequent NullPointerExceptions thrown whilst trying to share objects between threads (i managed to comment a few)
-- ConcurrentModificationExceptions thrown again whilst trying to access objects from different threads
-- Threads failing to acnowladge updated variables set from other threads unless breakpoint set at expression check? (namely the EngineWatchdog failing to acknowladge that the exitReport variable is no longer null, and the Logger failing to acknowladge that the BlockingQueue is no longer empty)
+- <s>Unexpected exiting of threads with no exception thrown</s> [FIXED]
+- <b>Unexpected freezing of threads with no exception thrown</b>
+- <s>Threads failing to start with no exception thrown</s> [FIXED]
+- <b>Frequent NullPointerExceptions thrown whilst trying to share objects between threads (i managed to comment a few)</b>
+- <b>ConcurrentModificationExceptions thrown again whilst trying to access objects from different threads</b>
+- <s>Threads failing to acnowladge updated variables set from other threads unless breakpoint set at expression check? (namely the EngineWatchdog failing to acknowladge that the exitReport variable is no longer null, and the Logger failing to acknowladge that the BlockingQueue is no longer empty)</s> [FIXED]
+- <b>LogEntries unreliable being recorded by the Log. Frequently missed LogEntries (especialy if they occur in quick succession)</b> [NEW] 
 
 I am pretty sure I am structuring my thread interactions completely wrong. If you could look over the code and its structure I would be very gratefull. Thanks!
 
