@@ -4,10 +4,10 @@ import tracerUtils.data.ExceptionContext;
 import tracerUtils.data.Stack;
 import tracerUtils.data.ThreadState;
 import tracerUtils.exitReport.QuitReason;
-import tracerUtils.logger.entries.extendedMessage.ExtendedMessage;
-import tracerUtils.logger.entries.extendedMessage.ExtendedMessageElement;
 import tracerUtils.logger.entries.LogEntry;
 import tracerUtils.logger.entries.LogLevel;
+import tracerUtils.logger.entries.extendedMessage.ExtendedMessage;
+import tracerUtils.logger.entries.extendedMessage.ExtendedMessageElement;
 import tracerUtils.logger.entries.extendedMessage.ExtendedMessageGroupElement;
 import tracerUtils.logger.entries.extendedMessage.ExtendedMessageTextElement;
 import tracerUtils.traceableException.defaultExceptions.fatal.UntraceableException;
@@ -50,12 +50,14 @@ public class FatalTraceableException extends RuntimeException {
     }
 
     public FatalTraceableException(QuitReason quitReason, String exceptionName, String message, String detailedMessage, String causeMessage, ThreadState threadState) {
+        this.quitReason = quitReason;
         this.exceptionName = exceptionName;
         this.message = message;
         this.detailedMessage = detailedMessage;
         this.causeMessage = causeMessage;
         this.cause = null;
         this.threadState = threadState;
+        stackTrace = threadState.getStack();
 
         contexts = new ArrayList<>();
         source = threadState.getStack().getElements()[1].getClassName();

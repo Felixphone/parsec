@@ -136,6 +136,8 @@ public class EngineCore  {
                 catch (Throwable e) {
                     if (! (e instanceof TraceableException || e instanceof FatalTraceableException)) {
                         throw new TraceableException(new UntraceableException(e));
+                    } else {
+                        throw e;
                     }
                 }
             } catch (TraceableException e) {

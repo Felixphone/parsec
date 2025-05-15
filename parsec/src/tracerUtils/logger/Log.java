@@ -1,6 +1,6 @@
 package tracerUtils.logger;
 
-import tracerUtils.crash.LiveLog;
+import tracerUtils.LogViewer;
 import tracerUtils.data.ThreadState;
 import tracerUtils.logger.entries.ConsoleColours;
 import tracerUtils.logger.entries.LogEntry;
@@ -24,18 +24,19 @@ public class Log {
     private boolean generatedFiles = false;
     private boolean closed = false;
     private boolean deleted = false;
+    private LogViewer logViewer;
 
     private LogLevel fileLogLevel;
     private LogLevel consoleLogLevel;
 
-    private ArrayList<LogEntry> entries;
-    private LiveLog liveLog;
+    private volatile ArrayList<LogEntry> entries;
 
     public Log(String name, String path, LogLevel consoleLogLevel, LogLevel fileLogLevel) {
         initTime = new Date();
         entries = new ArrayList<>();
-        liveLog = new LiveLog();
-        //liveLog.open();
+        logViewer = new LogViewer();
+
+        new Thread(() -> logViewer.open()).start();
 
         this.name = name;
         this.logFilePath = path;
@@ -76,7 +77,7 @@ public class Log {
 
     public void add(LogEntry logEntry) {
         entries.add(logEntry);
-        //liveLog.addEntry(logEntry);
+        logViewer.submitLogEntry(logEntry);
         if (logEntry.getLogLevel().getLevel() >= consoleLogLevel.getLevel()) {
             print(logEntry);
         }

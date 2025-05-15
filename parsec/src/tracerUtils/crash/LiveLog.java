@@ -1,45 +1,33 @@
 package tracerUtils.crash;
 
-import engine.engine.EngineCore;
 import launcher.watchdog.EngineWatchdog;
 import tracerUtils.GeneralDialogue;
-import tracerUtils.exitReport.ExitReport;
 import tracerUtils.logger.Logger;
 import tracerUtils.logger.entries.LogEntry;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.text.DefaultCaret;
 import java.awt.*;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
 import java.util.ArrayList;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 public final class LiveLog extends GeneralDialogue {
-
-    private boolean quit = false;
-    private boolean shouldRestart = false;
 
     private LiveLogPanel liveLogPanel;
     private Thread liveLogThread;
 
     public LiveLog() {
         super("PARSEC | Live log", "Live Log:", EngineWatchdog.getLogger());
-        this.logger = logger;
-        //liveLogPanel = new LiveLogPanel(this);
-        //setMainContent(liveLogPanel);
-        //getDialogueBanner().setBannerBackground(Color.blue);
+        liveLogPanel = new LiveLogPanel(this);
+        setMainContent(liveLogPanel);
+        getDialogueBanner().setBannerBackground(Color.blue);
     }
 
     @Override
     public void open() {
         liveLogThread = new Thread(super :: open);
         liveLogThread.setName("LIVE_LOG_THREAD");
-        //liveLogThread.start();
+        liveLogThread.start();
     }
 
     @Override
@@ -50,12 +38,12 @@ public final class LiveLog extends GeneralDialogue {
 
     @Override
     protected void onUpdate() {
+        liveLogPanel.updateVisibleEntries();
         super.onUpdate();
     }
 
     public void addEntry(LogEntry logEntry) {
         liveLogPanel.addEntry(logEntry); // Optimized UI rendering
-
     }
 
     protected Logger getLogger() {
@@ -87,10 +75,7 @@ class LiveLogPanel extends JPanel {
     JScrollPane scrollPane;
     JPanel log;
 
-    private final ArrayList<LogEntry> allLogEntries = new ArrayList<>();
-    private final Timer scrollTimer;
-
-    private static final int LOG_ENTRY_HEIGHT = 10; // Approximate height of a log entry
+    private volatile LinkedBlockingQueue<LogEntry> pendingEntries = new LinkedBlockingQueue<>();
 
 
     public LiveLogPanel(LiveLog liveLog) {
@@ -137,25 +122,17 @@ class LiveLogPanel extends JPanel {
         // reset the insets and add the log panel
         gridBagConstraints.insets = new Insets(0, 10, 0, 10);
         add(logPanel, gridBagConstraints);
-
-        scrollTimer = new Timer(100, e -> updateVisibleEntries());
-        scrollPane.getVerticalScrollBar().addAdjustmentListener(e -> scrollTimer.restart());
     }
 
     public void addEntry(LogEntry logEntry) {
-        allLogEntries.add(logEntry);
-        SwingUtilities.invokeLater(this::updateVisibleEntries);
+        pendingEntries.add(logEntry);
     }
 
-    private void updateVisibleEntries() {
-        int visibleHeight = scrollPane.getViewport().getHeight();
-        int scrollPosition = scrollPane.getVerticalScrollBar().getValue();
-        int startIndex = Math.max(0, scrollPosition / LOG_ENTRY_HEIGHT);
-        int endIndex = Math.min(allLogEntries.size(), (scrollPosition + visibleHeight) / LOG_ENTRY_HEIGHT);
-
-        log.removeAll(); // Remove all currently displayed log entries
-        for (int i = startIndex; i < endIndex; i++) {
-            log.add(allLogEntries.get(i).asJPanel()); // Add only visible entries
+    public void updateVisibleEntries() {
+        ArrayList<LogEntry> pending = new ArrayList<>();
+        pendingEntries.drainTo(pending);
+        for (LogEntry logEntry : pending) {
+            log.add(logEntry.asJPanel());
         }
         log.revalidate();
         log.repaint();

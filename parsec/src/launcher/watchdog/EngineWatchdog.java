@@ -129,7 +129,7 @@ public class EngineWatchdog {
 
         // log report
         logger.newLine();
-        logger.launcherLog("################ Engine Exit report: ###############", "\n" + exitReport.toString(), new ThreadState(Thread.currentThread()));
+        logger.launcherLog("\n################# Engine Exit report: ################", "\n" + exitReport.toString(), new ThreadState(Thread.currentThread()));
 
         if (exitReport.isClean()) {
             exitHandler.onExit(exitReport);

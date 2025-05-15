@@ -1,17 +1,12 @@
 package tracerUtils;
 
-import tracerUtils.crash.CrashDialogue;
 import tracerUtils.data.ThreadState;
 import tracerUtils.logger.Logger;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.font.TextAttribute;
-import java.io.IOException;
-import java.net.URI;
-import java.util.Map;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GeneralDialogue {
 
@@ -49,7 +44,7 @@ public class GeneralDialogue {
             close();
 
         } catch (Throwable e) {
-            logger.error("<!> Error displaying dialog <!>:", e.getMessage(), new ThreadState(Thread.currentThread()));
+            logger.error("<!> Error displaying dialog <!>:", e.getMessage(), e, new ThreadState(Thread.currentThread()));
         }
     }
 

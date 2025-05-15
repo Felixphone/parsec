@@ -140,7 +140,7 @@ public class Launcher {
         }
 
         // construct and return LaunchConfig
-        return new LaunchConfig(logLevel, debugMode, fatalExceptionHandling, 0, 0);
+        return new LaunchConfig(logLevel, debugMode, fatalExceptionHandling, false);
     }
 
     /**
