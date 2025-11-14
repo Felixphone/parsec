@@ -14,7 +14,7 @@ public class GeneralDialogue {
     private String title;
     private String bannerText;
 
-    private JFrame frame;
+    protected JFrame frame;
     private JPanel dialogueBody;
     private DialogueBanner dialogueBanner;
     private JPanel mainContentPanel;
@@ -135,6 +135,10 @@ public class GeneralDialogue {
 
     protected DialogueBanner getDialogueBanner() {
         return dialogueBanner;
+    }
+
+    public void hideDialogueBanner(boolean hide) {
+        dialogueBanner.setVisible(!hide);
     }
 
     public void setMainContent(JPanel jPanel) {

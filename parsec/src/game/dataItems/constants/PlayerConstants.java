@@ -19,6 +19,6 @@ public class PlayerConstants {
     public static final Vector3f STARTING_ROTATION = new Vector3f(0.5f, 0.0f, 0.5f);
     public static final Vector3f STARTING_SIZE = new Vector3f(0.5f, 1.0f, 0.5f);
 
-    public static final int SIMULATION_DISTANCE = 20; //crashes if over 5500 chunks are loaded idk why
+    public static final int SIMULATION_DISTANCE = 3; //crashes if over 5500 chunks are loaded idk why
 
 }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="flatlaf-1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/parsec/src/flatlaf-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

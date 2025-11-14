@@ -4,7 +4,6 @@ import launcher.watchdog.EngineWatchdog;
 import tracerUtils.data.ThreadState;
 import tracerUtils.logger.entries.LogEntry;
 import tracerUtils.logger.entries.LogLevel;
-import tracerUtils.logger.Logger;
 import tracerUtils.traceableException.FatalTraceableException;
 
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ public class CrashReport extends ExitReport {
         isClean = false;
         this.exception = fatalCoreException;
 
-        // generate a random phrase/splash, just for fun :)
+        // just for fun :)
         try {
             Random random = new Random();
             String[] phrases = new String[]{"Oopsie...", "Was that me?", "Here we go again...", "Ouch!", "Is that bad?...", "Is that a bad thing?", "Good dog!", "Nice catch!", "It's a big'n!", "Have a hug!", "Nooooooooooo...", "Arghhh!"};
@@ -98,7 +97,6 @@ public class CrashReport extends ExitReport {
                 for (String line : exceptionInfo) {
                     info.add(" | " + line);
                 }
-                info.add("");
             }
         }
 

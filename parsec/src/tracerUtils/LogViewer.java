@@ -1,5 +1,6 @@
 package tracerUtils;
 
+import com.formdev.flatlaf.FlatDarculaLaf;
 import launcher.watchdog.EngineWatchdog;
 import tracerUtils.data.ThreadState;
 import tracerUtils.logger.entries.LogEntry;
@@ -362,6 +363,11 @@ public class LogViewer extends GeneralDialogue {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    UIManager.setLookAndFeel(new FlatDarculaLaf());
+                } catch (UnsupportedLookAndFeelException e) {
+                    throw new RuntimeException(e);
+                }
                 while (true) {
                     LogLevel level = LogLevel.values()[(int) (Math.random() * LogLevel.values().length)];
                     viewer.submitLogEntry(new LogEntry(level, "test", "test", new ThreadState(Thread.currentThread())));

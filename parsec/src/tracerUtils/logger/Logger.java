@@ -125,7 +125,7 @@ public class Logger {
             if (log != null) {
                 ArrayList<LogEntry> entries = new ArrayList<>();
                 pendingEntries.drainTo(entries);
-                for (LogEntry logEntry : pendingEntries) {
+                for (LogEntry logEntry : entries) {
                     log.add(logEntry); // TODO: error: nullptr to log if log still being created
                 }
             }

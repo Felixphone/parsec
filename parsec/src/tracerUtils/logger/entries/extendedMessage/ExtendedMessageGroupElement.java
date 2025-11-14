@@ -34,10 +34,10 @@ public class ExtendedMessageGroupElement extends ExtendedMessageElement {
                 list.add(" | " + line);
             }
             if (i < contents.size()) {
-                list.add("---------------------------------------------------- #GROUP");
+                list.add("----------------------------------------------------");
             }
         }
-        list.add("==================================================== #GROUP");
+        list.add("====================================================");
         return list;
     }
 }

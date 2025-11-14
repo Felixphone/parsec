@@ -2,19 +2,18 @@ package game;
 
 import engine.dataItems.constants.GameWindowConstants;
 import engine.dataItems.exceptions.InvalidInputException;
-import launcher.watchdog.EngineWatchdog;
-import tracerUtils.data.ExceptionContext;
-import tracerUtils.data.ThreadState;
-import tracerUtils.traceableException.TraceableException;
-import tracerUtils.traceableException.defaultExceptions.fatal.SimulatedException;
 import engine.engine.EngineCore;
 import engine.graphics.UI.UIManager;
 import engine.graphics.UI.screens.TitleScreen;
-import tracerUtils.logger.Logger;
 import game.dataItems.exeptions.ConcurrentWorldLoadException;
 import game.world.World;
-import tracerUtils.exitReport.QuitReason;
 import org.lwjgl.glfw.GLFW;
+import tracerUtils.data.ExceptionContext;
+import tracerUtils.data.ThreadState;
+import tracerUtils.exitReport.QuitReason;
+import tracerUtils.logger.Logger;
+import tracerUtils.traceableException.TraceableException;
+import tracerUtils.traceableException.defaultExceptions.fatal.SimulatedException;
 
 public class GameCore {
 

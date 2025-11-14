@@ -53,7 +53,6 @@ public class DefaultApplication extends GenericApplication {
                 """);
 
         close();
-
     }
 
     // ==== Closure methods ====

@@ -4,7 +4,6 @@ import launcher.watchdog.EngineWatchdog;
 import tracerUtils.data.ThreadState;
 import tracerUtils.logger.entries.LogEntry;
 import tracerUtils.logger.entries.LogLevel;
-import tracerUtils.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -104,7 +103,6 @@ public class ExitReport {
                 for (String line : exceptionInfo) {
                     info.add(" | " + line);
                 }
-                info.add("");
             }
         }
 
